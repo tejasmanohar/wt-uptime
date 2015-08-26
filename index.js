@@ -14,7 +14,7 @@ module.exports = function(ctx, cb) {
 
   request.get(ctx.data.URL)
     .end((err, res) => {
-      if (err) {
+      if (err || res.status !== 200) {
         notifyUser();
       }
       cb();
