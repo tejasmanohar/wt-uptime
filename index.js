@@ -1,8 +1,8 @@
 'use latest';
 
-const P = require('bluebird');
-const request = require('superagent-bluebird-promise');
-const twilio = require('twilio');
+const P = require('bluebird@2.9.26');
+const request = require('superagent-bluebird-promise@1.2.0');
+const twilio = require('twilio@2.2.1');
 
 const twilioClient = new twilio.RestClient(ctx.data.TWILIO_ACCOUNT_SID, ctx.data.TWILIO_AUTH_TOKEN);
 
