@@ -9,3 +9,10 @@ const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, MY_PHONE_NUM
 const twilioClient = new twilio.RestClient(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 const createMessage = P.promisify(twilioClient.sms.messages.create, twilioClient);
 
+export default function(ctx, cb) {
+
+  if (!TWILIO_ACCOUNT_SID || !TWILIO_AUTH_TOKEN || !TWILIO_PHONE_NUMBER || !MY_PHONE_NUMBER) {
+    return cb(new Error('Key missing'));
+  }
+
+}
