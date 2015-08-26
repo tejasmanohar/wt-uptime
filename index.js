@@ -1,12 +1,12 @@
 'use latest';
 
-import P from 'bluebird';
-import request from 'superagent-bluebird-promise';
-import twilio from 'twilio';
+const P = require('bluebird');
+const request = require('superagent-bluebird-promise');
+const twilio = require('twilio');
 
 const twilioClient = new twilio.RestClient(ctx.data.TWILIO_ACCOUNT_SID, ctx.data.TWILIO_AUTH_TOKEN);
 
-export default function(ctx, cb) {
+module.exports = function(ctx, cb) {
   const reqs = meetsReqs();
   if (!reqs.success) {
     return cb(new Error(reqs.message));
