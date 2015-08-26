@@ -30,6 +30,9 @@ module.exports = function(ctx, cb) {
         };
       }
     }
+    return {
+      success: true
+    }
   }
 
   function notifyUser() {
