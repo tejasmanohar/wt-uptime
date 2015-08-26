@@ -4,7 +4,7 @@ import P from 'bluebird';
 import request from 'superagent-bluebird-promise';
 import twilio from 'twilio';
 
-const twilioClient = new twilio.RestClient(ctx.data.TWILIO_ACCOUNT_SID, ctx.data.TWILIO_AUTH_TOKEN)
+const twilioClient = new twilio.RestClient(ctx.data.TWILIO_ACCOUNT_SID, ctx.data.TWILIO_AUTH_TOKEN);
 
 export default function(ctx, cb) {
   const reqs = meetsReqs();
