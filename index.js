@@ -37,7 +37,7 @@ module.exports = function(ctx, cb) {
 
   function notifyUser() {
     return twilioClient.sms.messages.post({
-      to: MY_PHONE_NUMBER,
+      to: ctx.data.MY_PHONE_NUMBER,
       from: ctx.data.TWILIO_PHONE_NUMBER,
       body: 'Site down!'
     });
