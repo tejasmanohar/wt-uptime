@@ -15,4 +15,11 @@ export default function(ctx, cb) {
     return cb(new Error('Key missing'));
   }
 
+  request.get(URL)
+    .catch(() => {
+      sendText(MY_PHONE_NUMBER, 'Site down!');
+    }).finally(() => {
+      cb();
+    });
+
 }
